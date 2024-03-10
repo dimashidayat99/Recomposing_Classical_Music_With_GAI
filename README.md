@@ -66,7 +66,7 @@ Majority of the durations used was 16th notes followed by 8th note. The quarter 
 ### Pitch Frequency Distribution
 ![]()
 
-The distribution of pitch frequency is positively skewed with the modes around 250 $s^-{1}$. Majority of the chords and notes used is in the frequencies of 50 $s^{-1}$ to 750 $s^{-1}$. While chords and notes with frequencies around 1000 $s^{-1}$ and above can be seen as minority chords and notes in the Chopin composed music.
+The distribution of pitch frequency is positively skewed with the modes around 250 $s^{-1}$. Majority of the chords and notes used is in the frequencies of 50 $s^{-1}$ to 750 $s^{-1}$. While chords and notes with frequencies around 1000 $s^{-1}$ and above can be seen as minority chords and notes in the Chopin composed music.
 
 ### Duration Distribution
 ![]()
