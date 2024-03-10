@@ -1,6 +1,6 @@
 # Background of the Study
 
- Music is a universal language that transcends cultural boundaries and speaks to the depths of human emotion and experience. Music has the power to stimulate memories, stir passions and bring people together in a profound way, from the rhythmic beats of tribal drums to the intricate melody of symphony orchestras.  Music is a universal language that transcends cultural boundaries and speaks to the depths of human emotion and experience. Music has the power to stimulate memories, stir passions and bring people together in a profound way, from the rhythmic beats of tribal drums to the intricate melody of symphony orchestras.  Classical music is one of the most enduring and beloved forms of music. Rooted in centuries of tradition and innovation, classical music encompasses a vast repertoire of compositions that have stood the test of time.  Classical music is one of the most enduring and beloved forms of music. Rooted in centuries of tradition and innovation, classical music encompasses a vast repertoire of compositions that have stood the test of time. Classical music, with its rich history and diverse repertoire, has long been a source of inspiration and admiration for musicians and audiences alike. For its complexity, beauty, and emotional depth, the compositions of great classical composers such as Bach, Beethoven, Mozart, and others are revered.For musicians and audiences alike, classical music has long been a source of inspiration and admiration, with its rich history and diverse repertoire. For its complexity, beauty, and emotional depth, the compositions of great classical composers such as Bach, Beethoven, Mozart, and others are revered. 
+Music is a universal language that transcends cultural boundaries and speaks to the depths of human emotion and experience. Music has the power to stimulate memories, stir passions and bring people together in a profound way, from the rhythmic beats of tribal drums to the intricate melody of symphony orchestras. Classical music is one of the most enduring and beloved forms of music. Rooted in centuries of tradition and innovation, classical music encompasses a vast repertoire of compositions that have stood the test of time.  Classical music is one of the most enduring and beloved forms of music. Rooted in centuries of tradition and innovation, classical music encompasses a vast repertoire of compositions that have stood the test of time. Classical music, with its rich history and diverse repertoire, has long been a source of inspiration and admiration for musicians and audiences alike. For its complexity, beauty, and emotional depth, the compositions of great classical composers such as Bach, Beethoven, Mozart, and others are revered.For musicians and audiences alike, classical music has long been a source of inspiration and admiration, with its rich history and diverse repertoire. For its complexity, beauty, and emotional depth, the compositions of great classical composers such as Bach, Beethoven, Mozart, and others are revered. 
 
 Eventhough the classical music is not really popular today, classical music does not remain static. It's continuing to evolve and be an inspiration for new generations of musicians and composers. The use of technology, particularly artificial intelligence (AI), is one way in which classical music has evolved. AI can change the way music is composed, performed and listened to, opening up new possibilities for creativity and expression. The growing interest in using AI in recent years has promoted the usage of AI in so many field including music generation. Generative AI, in particular, has shown promise in this regard. By analyzing vast amounts of musical data, generative AI algorithms can learn the patterns and structures that define a particular style or genre of music.  This allows them to compose new compositions which are stylistically similar to those of the composers they've been trained in. 
 
@@ -10,15 +10,75 @@ There are a number of possible benefits to the revival of classic music using ge
 
 The project will based on following research questions. These research questions are designed to provide a comprehensive exploration of the use of generative AI for recomposing classical music, covering technical, and artistic aspects of this emerging field.
 
-1. How effectively can current generative AI algorithms capture the stylistic elements of classical music, such as melody, harmony, and form?
-2. What kind of generative models that can produces the most pleasant music ?
-3. How do AI-generated classical music compositions compare to established works in the classical repertoire, both in terms of technical execution and artistic expression, as evaluated by musicians and audiences?
+1. How to create generaitve AI algorithms to produce music similar to classical music ?
+2. What kind of generative AI algorithms can produces the most pleasant music and approaching the characteristics of classical music ?
+3. How do AI-generated classical music compositions compare to established works in the classical repertoire in terms of technical execution and artistic expression, as evaluated by musicians and audiences?
 
 # Research Objectives
 
 The objective of this project is to investigate the use of generative AI for recomposing classical music. Specifically, the study aims to achieve the following objectives:
 
-1. To developed a 
+1. To developed generative AI algorithms to produces music similar to classical music.
+2. To evaluate which generative AI algorithms that can produce the most pleasant music and approaching the characteristics of classical music.
+3. To compared the AI-generated classical music compositions with the established work in the classical repertoire in terms of technical execution and artistic expression which evaluated by musicians and audiences.
+
+# Methodology
+
+## Dataset
+The dataset used in this project was obtained from [kaggle](https://www.kaggle.com/datasets/soumikrakshit/classical-music-midi). Where the dataset consists of classical piano midi files containing compositions of 19 famous composers scraped from [piano-midi website](http://www.piano-midi.de). From all famous composer, this porject utilizing classical music from only one composer which known as Chopin. The reason why only one composer was used due to the simplicity, memory consumptions and model training time.
+
+## EDA
+
+![]()
+
+The process of Exploratory Data Analysis (EDA) is shown in figure above where it begins with gathering the classical music midi data. The data the was undergone sampling process where only chopin music will be choosen. There are two type of EDA, the first type of EDA is directly toward the exploration of the music itself without data preprocessing where the music sheet and audio was produced to get better understanding on the music on how music sounds like and how the musics notes and durations looks like.
+
+![]()
+
+https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/assets/69446089/6c6b181e-c793-4af1-9463-8713cb655526
+
+
+
+The process continue with the data preprocessing where each of the Chopin composed music was undergone clef spliiting where the treble and bass clef was separated. Each of the clef was undergone the music element extraction where the notes, chords and durations were extracted for the dataframe construction which consisting of two features where the first features consisting the notes and chords while the second features consisting durations. The chords and notes were extracted based on their pitch freuency while the durations were extracted based on the durations type. Two dataframe was constructed for each treble and bass clef. Each of the dataframe was undergone the EDA for second type which is more toward data analytics. The EDA was done for univariate, mutlivariate and outliers. Noted that the first column was named music element which consist of notes and chords while second column was named durations.
+
+# Univariate Analysis
+## Bass Clef
+![]()
+## Treble Clef
+![]()
+## Both Clef
+![]()
+
+# Multivariate Analysis
+## Bass Clef
+![]()
+## Treble Clef
+![]()
+## Both Clef
+![]()
+
+# Outliers Analysis
+## Bass Clef
+![]()
+## Treble Clef
+![]()
+## Both Clef
+![]()
+
+
+
+## Modelling
+
+There are so many generative models available which can be used in this project. However, among all the generaitve models, only 4 models will be used which are autoregressive model or known as Recurrent Neural Network (RNN) by using LSTM architecture, Variational AutoEncoder (VAE), Generative Adversarial Network (GAN) and large language model of Generative Pretrained Transformer (GPT). Another model used in this project is a fusion model which a combination of three different generative model architecture where RNN of Gate Recurrent Unit (GRU) architecure was combine with VAE architecture together with GAN architecture. Each of the model require different representation of the data, therefore, different preprocesing was applied to the data for each model. 
+
+### Autoregressive Model - Recurrent Neural Network (LSTM)
+![]()
+### Variational AutoEncoder (VAE)
+### Generative Adversarial Network (GAN)
+### Fusion Model - RNN (GRU) + VAE + GAN
+### Large Language Model - Generative Pretrained Transformer (GPT)
+# Evaluation
+# Conclusion
 
    
 
