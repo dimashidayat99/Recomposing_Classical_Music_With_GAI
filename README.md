@@ -1,6 +1,6 @@
 # Background of the Study
 
-Music is a universal language that transcends cultural boundaries and speaks to the depths of human emotion and experience. Music has the power to stimulate memories, stir passions and bring people together in a profound way, from the rhythmic beats of tribal drums to the intricate melody of symphony orchestras. Classical music is one of the most enduring and beloved forms of music. Rooted in centuries of tradition and innovation, classical music encompasses a vast repertoire of compositions that have stood the test of time.  Classical music is one of the most enduring and beloved forms of music. Rooted in centuries of tradition and innovation, classical music encompasses a vast repertoire of compositions that have stood the test of time. Classical music, with its rich history and diverse repertoire, has long been a source of inspiration and admiration for musicians and audiences alike. For its complexity, beauty, and emotional depth, the compositions of great classical composers such as Bach, Beethoven, Mozart, and others are revered.For musicians and audiences alike, classical music has long been a source of inspiration and admiration, with its rich history and diverse repertoire. For its complexity, beauty, and emotional depth, the compositions of great classical composers such as Bach, Beethoven, Mozart, and others are revered. 
+Music is a universal language that transcends cultural boundaries and speaks to the depths of human emotion and experience. Music has the power to stimulate memories, stir passions and bring people together in a profound way, from the rhythmic beats of tribal drums to the intricate melody of symphony orchestras. Classical music is one of the most enduring and beloved forms of music. Rooted in centuries of tradition and innovation, classical music encompasses a vast repertoire of compositions that have stood the test of time.  Classical music is one of the most enduring and beloved forms of music. Rooted in centuries of tradition and innovation, classical music encompasses a vast repertoire of compositions that have stood the test of time. Classical music, with its rich history and diverse repertoire, has long been a source of inspiration and admiration for musicians and audiences alike. For its complexity, beauty, and emotional depth, the compositions of great classical composers such as Bach, Beethoven, Mozart, and others are revered. For musicians and audiences alike, classical music has long been a source of inspiration and admiration, with its rich history and diverse repertoire. For its complexity, beauty, and emotional depth, the compositions of great classical composers such as Bach, Beethoven, Mozart, and others are revered. 
 
 Eventhough the classical music is not really popular today, classical music does not remain static. It's continuing to evolve and be an inspiration for new generations of musicians and composers. The use of technology, particularly artificial intelligence (AI), is one way in which classical music has evolved. AI can change the way music is composed, performed and listened to, opening up new possibilities for creativity and expression. The growing interest in using AI in recent years has promoted the usage of AI in so many field including music generation. Generative AI, in particular, has shown promise in this regard. By analyzing vast amounts of musical data, generative AI algorithms can learn the patterns and structures that define a particular style or genre of music.  This allows them to compose new compositions which are stylistically similar to those of the composers they've been trained in. 
 
@@ -35,36 +35,77 @@ The process of Exploratory Data Analysis (EDA) is shown in figure above where it
 
 ![]()
 
-https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/assets/69446089/6c6b181e-c793-4af1-9463-8713cb655526
-
-
+![]()
 
 The process continue with the data preprocessing where each of the Chopin composed music was undergone clef spliiting where the treble and bass clef was separated. Each of the clef was undergone the music element extraction where the notes, chords and durations were extracted for the dataframe construction which consisting of two features where the first features consisting the notes and chords while the second features consisting durations. The chords and notes were extracted based on their pitch freuency while the durations were extracted based on the durations type. Two dataframe was constructed for each treble and bass clef. Each of the dataframe was undergone the EDA for second type which is more toward data analytics. The EDA was done for univariate, mutlivariate and outliers. Noted that the first column was named music element which consist of notes and chords while second column was named durations.
 
 # Univariate Analysis
 ## Bass Clef
+### Pitch Frequency Distribution
 ![]()
+
+The distribution of pitch frequency is positively skewed with the modes around 160 $s^-{1}$. Majority of the chords and notes used is in the frequencies of 50 $s^{-1}$ to 300 $s^{-1}$. While chords and notes with frequencies around 500 $s^{-1}$ and above can be seen as minority chords and notes used in the Chopin composed music. 
+
+### Duration Distribution
+![]()
+
+Majority of the durations used was 8th notes with around 17500 followed by 16th note with around 14000. The quarter notes is in the third position with around 7500 count. Other than the mentioned durations which are whole note, half note, complex note, breve note and 32nd note are the minority durations in the Chopin compoased music.
+
 ## Treble Clef
+### Pitch Frequency Distribution
 ![]()
+
+The distribution of pitch frequency is positively skewed with the modes around 350 $s^-{1}$. Majority of the chords and notes used is in the frequencies of 200 $s^{-1}$ to 1300 $s^{-1}$. While chords and notes with frequencies around 1500 $s^{-1}$ and above can be seen as minority chords and notes used in the Chopin composed music.
+
+### Duration Distribution
+![]()
+
+Majority of the durations used was 16th notes followed by 8th note. The quarter notes is in the third position with around 6500 count. Other than the mentioned durations which are whole note, half note, complex note, breve note and 32nd note are the minority durations in the Chopin compoased music.
+
 ## Both Clef
+### Pitch Frequency Distribution
 ![]()
+
+The distribution of pitch frequency is positively skewed with the modes around 250 $s^-{1}$. Majority of the chords and notes used is in the frequencies of 50 $s^{-1}$ to 750 $s^{-1}$. While chords and notes with frequencies around 1000 $s^{-1}$ and above can be seen as minority chords and notes in the Chopin composed music.
+
+### Duration Distribution
+![]()
+
+Majority of the durations used was 8th notes with 35000 count followed by 16th note with around 32500. The quarter notes is in the third position with 15000 count. Other than the mentioned durations which are whole note, half note, complex note, breve note and 32nd note are the minority durations in the Chopin compoased music.
 
 # Multivariate Analysis
 ## Bass Clef
 ![]()
+
+The 8th note, 16th note and quarter note have almost similar shape of distribution which is almost symmetric. Majority of the notes are in the range of 30 $s^{-1}$ to 400 $s^{-1}$. The range of 8th note distribution is around 20 $s^{-1}$ to 1300 $s^{-1}$ while te range of 16th note distribution is around 20 $s^{-1}$ to 1400 $s^{-1}$. Half note has similar distribution of majority of the notes but postively skewed with the mode around 100 $s^{-1}$. The whole note has a mode around 80 $s^{-1}$ with majority of the notes is in the range of 20 $s^{-1}$ to 200 $s^{-1}$. The complex note has the range of distribution of 0 $s^{-1}$ to 1400 $s^{-1}$ with majority of the notes is in the range of 0 $s^{-1}$ to 400 $s^{-1}$. Both breve note and 32nd note has almost the same shape of distribution with almost same modes around 100 $s^{-1}$. Also, both have the same range of distribtion which from 0 $s^{-1}$ to around 360 $s^{-1}$.
+
 ## Treble Clef
 ![]()
+
+The half note, quarter note, 8th note and 16th note have almost similar shape of distribution which is slight positively skewed with almost similar range where most notes are in the range of 200 $s^{-1}$ to 1000 $s^{-1}$ with the distribution range of 200 $s^{-1}$ to 2900 $s^{-1}$. The whole note has a mode around 450 $s^{-1}$ with distribution range of 150 $s^{-1}$ to 1000 $s^{-1}$. The complex note has the longest range of distribution of 0 $s^{-1}$ to 3000 $s^{-1}$. The breve note distribution is the only negatively skewed in the treble clef dsitribution, the breve note distribution has mode around 500 $s^{-1}$ with the range of 200 $s^{-1}$ to 800 $s^{-1}$. The 32nd note distribution has mode around 500 $s^{-1}$ with the range of 0 $s^{-1}$ to 1750 $s^{-1}$ with the majority of the notes lies in the range of 200 $s^{-1}$ to 800 $s^{-1}$. 
+
 ## Both Clef
 ![]()
+
+The 8th note and 16th note have almost similar shape of distribution which is positively skewed with similar range where most notes are in the range of 30 $s^{-1}$ to 2800 $s^{-1}$ and mode of 200 $s^{-1}$ with majority of the notes lies in the range of 100 $s^{-1}$ to 1000 $s^{-1}$. Half note has similar distribution range but the distribution is symmetric. The quarter note distribution has notable mode around 250 with the range of 0 $s^{-1}$ to 1200 $s^{-1}$ with majority of the notes lies in the range of 100 $s^{-1}$ to 500 $s^{-1}$. The whole note distribution is positively skewed with the mode around 150 $s^{-1}$ with distribution range of 0 $s^{-1}$ to 1100 $s^{-1}$ with the majority of notes lies in the range of 50 $s^{-1}$ to 500 $s^{-1}$. The complex note has the longest range of distribution of 0 $s^{-1}$ to 3000 $s^{-1}$. Both breve note and 32nd note, both are positively skewed but different shape and range. The range of distribtion of 32nd note is a bit longer compared to the range of distribtion of breve note while both have almost the same mode around 200 $s^{-1}$.
 
 # Outliers Analysis
 ## Bass Clef
 ![]()
+
+From the plot, the median of the bass clef distribution is at 200 $s^{-1}$ with the interquartile range of 150 $s^{-1}$ to 250 $s^{-1}$. The bass clef distribution has maximum of around 500 $s^{-1}$ and minimum of around 50 $s^{-1}$. The notes above 500 $s^{-1}$ are identfied as outliers.
+
 ## Treble Clef
 ![]()
+
+From the plot, the median of the treble clef distribution is at 500 $s^{-1}$ with the interquartile range of 400 $s^{-1}$ to 750 $s^{-1}$. The bass clef distribution has maximum of around 1300 $s^{-1}$ and minimum of around 50 $s^{-1}$. The notes above 1300 $s^{-1}$ are identfied as outliers.
+
 ## Both Clef
 ![]()
 
+From the plot, the median of the both clef distribution is at 300 $s^{-1}$ with the interquartile range of around 150 $s^{-1}$ to 500 $s^{-1}$. The both clef distribution has maximum of around 1000 $s^{-1}$ and minimum of around 50 $s^{-1}$. The notes above 1000 $s^{-1}$ are identfied as outliers.
+
+The outliers analsis shows there are many outliers in the data. However, the technique used to deal with outliers is simply keep the outliers in the data. Dealing with outliers by removing will affect the sequences of the notes which make the music have high degree of disorderness in the notes sequences which may cause worst output of AI-generate music.
 
 
 ## Modelling
