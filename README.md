@@ -114,6 +114,8 @@ There are so many generative models available which can be used in this project.
 
 ### Autoregressive Model - Recurrent Neural Network (LSTM)
 ![]()
+
+
 ### Variational AutoEncoder (VAE)
 ### Generative Adversarial Network (GAN)
 ### Fusion Model - RNN (GRU) + VAE + GAN
