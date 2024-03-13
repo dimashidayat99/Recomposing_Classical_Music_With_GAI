@@ -49,7 +49,7 @@ The distribution of pitch frequency is positively skewed with the modes around 1
 ### Duration Distribution
 ![]()
 
-Majority of the durations used was 8th notes with around 17500 followed by 16th note with around 14000. The quarter notes is in the third position with around 7500 count. Other than the mentioned durations which are whole note, half note, complex note, breve note and 32nd note are the minority durations in the Chopin compoased music.
+Majority of the durations used was 8th notes with around 17500 counts followed by 16th note with around 14000 counts. The quarter notes is in the third position with around 7500 count. Other than the mentioned durations which are whole note, half note, complex note, breve note and 32nd note are the minority durations in the Chopin compoased music.
 
 ## Treble Clef
 ### Pitch Frequency Distribution
@@ -60,7 +60,7 @@ The distribution of pitch frequency is positively skewed with the modes around 3
 ### Duration Distribution
 ![]()
 
-Majority of the durations used was 16th notes followed by 8th note. The quarter notes is in the third position with around 6500 count. Other than the mentioned durations which are whole note, half note, complex note, breve note and 32nd note are the minority durations in the Chopin compoased music.
+Majority of the durations used was 16th notes followed by 8th note. The quarter notes is in the third position with around 6500 counts. Other than the mentioned durations which are whole note, half note, complex note, breve note and 32nd note are the minority durations in the Chopin compoased music.
 
 ## Both Clef
 ### Pitch Frequency Distribution
@@ -71,7 +71,7 @@ The distribution of pitch frequency is positively skewed with the modes around 2
 ### Duration Distribution
 ![]()
 
-Majority of the durations used was 8th notes with 35000 count followed by 16th note with around 32500. The quarter notes is in the third position with 15000 count. Other than the mentioned durations which are whole note, half note, complex note, breve note and 32nd note are the minority durations in the Chopin compoased music.
+Majority of the durations used was 8th notes with 35000 count followed by 16th note with around 32500 counts. The quarter notes is in the third position with 15000 counts. Other than the mentioned durations which are whole note, half note, complex note, breve note and 32nd note are the minority durations in the Chopin compoased music.
 
 # Multivariate Analysis
 ## Bass Clef
