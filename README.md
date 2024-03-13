@@ -115,8 +115,28 @@ There are so many generative models available which can be used in this project.
 ### Autoregressive Model - Recurrent Neural Network (LSTM)
 ![]()
 
+#### Preprocessing - LSTM
+As shown in the framework figure above, the LSTM modelling start with sampling process where only five midi file was used and only come from Chopin composed music. The midi files was processed further by extracting their parts. Each part was looked for their clef property where parts with treble clef property belongs to treble clef while parts with bass clef property belongs to bass clef. The music element such as notes, chords and durations will be extracted for each clef. The notes and chords are grouped together under the same feature while durations itself become another feature. Both features was combine forming a dataframe. There are total 2 dataframe which represent treble and bass clef. Both dataframe were processed further for data transformation, where list of chords were changed to chords label and numerical representation of duration data was transformed to categorical data. Noted that, in music, the duration is mostly represent as categorical representative instead of numerical representative. After transormation, both dataframe were encoded by using label encoding technique. Finally, the sequence data of each clef was produced by extracting 100 sequence data from the dataframe. The final product of the preprocessing stage is two data consist of 100 sequence of notes and durations
+
+#### Modelling - LSTM
+This project used typically one model for each clef. Therefore, there are total two identical model architecture were used for modelling stage. The architecture of LSTM model is based on 3 layers of LSTM architecture with a dropout layer between two LSTM layer. After the final layer of LSTM, the architecture utilized a dense layer.  Since there are two features in the input data, the output data will have two features too (notes and durations). Therefore, the final layers (output layers) is consist of two dense layer with softmax activation function which each represent notes (can be chords) and durations. The final product of the models will be the generated notes and durations in the form of probability across all notes used and durations used in the dataset.
+
+#### Music Generation - LSTM
+The outputs (notes and durations) were go through top k sampling process where one from top 10 notes and one from top 5 durations will be randomly select. The dataframe was constructed based on the select notes and durations. Since there two clef, there are two total dataframe which are treble clef dataframe and bass clef dataframe. The dataframes will undergo the inverse label encoding and inverse transformation. The processed generated dataframes will be combine together into music score and stream forming a music.
 
 ### Variational AutoEncoder (VAE)
+
+![]()
+
+#### Preprocessing - VAE
+As shown in the framework figure above, the VAE processing has some degree of similarity with LSTM. Sampling, clef splitting, music element extraction, dataframe construction, transformation and label encoding process was similar to LSTM. The difference start after the label encoding process, where the dataframe will be processed by extracing the 100 sequence data of each notes and durations and forming arrays. There four arrays produced in total which are treble notes, treble durations, bass notes and bass durations. Each of the arrays will go through one hot encoding. Finally, each notes will be flattened to vocab size times sequence length of the data. Noted that since there are four arrays, there are 4 vocab size which represent unique value of treble notes, unique value of treble durations, unique value of bass notes and unique value of bass durations. The final product of the preprocessing stage is the 4 processed array which consist of one hot sequence data which are treble notes, treble durations, bass notes and bass durations.
+
+#### Modelling - VAE
+Similar with LSTM this project used identical architectue to
+
+#### Music Generation - VAE
+The outputs (notes and durations) were go through top k sampling process where one from top 10 notes and one from top 5 durations will be randomly select. The dataframe was constructed based on the select notes and durations. Since there two clef, there are two total dataframe which are treble clef dataframe and bass clef dataframe. The dataframes will undergo the inverse label encoding and inverse transformation. The processed generated dataframes will be combine together into music score and stream forming a music.
+
 ### Generative Adversarial Network (GAN)
 ### Fusion Model - RNN (GRU) + VAE + GAN
 ### Large Language Model - Generative Pretrained Transformer (GPT)
