@@ -187,6 +187,21 @@ $$ Loss_{Total} =  Loss_{Vae Notes} + Loss_{Vae Durations}$$
 After the GAN training, the notes and durations from the generated is extracted. The outputs (notes and durations) will go through top k sampling process where one from top ten notes and one from top five durations will be randomly select. The dataframe was constructed based on the selected notes and durations. Since there two clef, there are two total dataframe which are treble clef dataframe and bass clef dataframe. The dataframes will undergo the inverse label encoding and inverse transformation. The processed generated dataframes will be combine together into music score and stream forming a music.
 
 ### Large Language Model - Generative Pretrained Transformer (GPT)
+![]()
+
+#### Preprocessing - GPT
+As shown in the framework figure above, the GPT modelling start with sampling process where only five midi file was used and only come from Chopin composed music. The midi files was processed further by extracting their parts. Each part was looked for their clef property where parts with treble clef property belongs to treble clef while parts with bass clef property belongs to bass clef. The music element such as notes, chords and durations will be extracted for each clef. The notes and chords are grouped together under the same feature while durations itself become another feature. Both features was combine forming a dataframe. There are total 2 dataframe which represent treble and bass clef. Both dataframe were processed further for data transformation, where list of chords were changed to chords label and numerical representation of duration data was transformed to categorical data. Noted that, in music, the duration is mostly represent as categorical representative instead of numerical representative. After transormation, both features of notes and durations were combined together forming a new features. This new feature (combined feature) is the only feature use for model training. The both dataframe later were encoded by using label encoding technique. Finally, the sequence data of each clef was produced by extracting 100 sequence data from the dataframe. The final product of the preprocessing stage is two data consist of 100 sequence of combined feature.
+
+#### Modelling - GPT
+This project used typically one model for each clef. Therefore, there are total two identical model architecture were used for modelling stage. The architecture of GPT model start with input layer connected to embedding layers 
+
+is based on 3 layers of LSTM architecture with a dropout layer between two LSTM layer. After the final layer of LSTM, the architecture utilized a dense layer.  Since there are two features in the input data, the output data will have two features too (notes and durations). Therefore, the final layers (output layers) is consist of two dense layer with softmax activation function which each represent notes (can be chords) and durations. The loss function used in the LSTM model is sparse categorical crossentropy. The final product of the models will be the generated notes and durations in the form of probability across all notes used and durations used in the dataset.
+
+#### Music Generation - GPT
+The outputs (notes and durations) were go through top k sampling process where one from top 10 notes and one from top 5 durations will be randomly select. The dataframe was constructed based on the select notes and durations. Since there two clef, there are two total dataframe which are treble clef dataframe and bass clef dataframe. The dataframes will undergo the inverse label encoding and inverse transformation. The processed generated dataframes will be combine together into music score and stream forming a music.
+
+
+
 # Evaluation
 # Conclusion
 
