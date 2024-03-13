@@ -134,7 +134,11 @@ As shown in the framework figure above, the VAE processing has some degree of si
 #### Modelling - VAE
 Similar with LSTM this project used identical architectue in the modelling stage. The VAE architecture used is a variant of VAE itself, which is a novel architcture (to the best of my knowledge) for VAE which named multi-VAE. Similar with the original VAE, it consist of two main components which are encoder and decoder. The encoder in multi-VAE receive two input which from notes and durations. Each input layer is connected to three dense layer, the final dense layer is have two different connection. The first connection is the final dense layer in the encoder will be connected to another two dense layer forming latent variables of z means and z log variance. Later the z means and z log variance will be connected to sampling layer to sampled the latent representation of z. On the other hand, the two final dense layer for each input (notes and durations) will be combined together using concecatenate layers and connected to the dense layers. This dense layer will be combined with the sampled latent representation of z for notes and durations using concatenate layer forming the final product of latent representation. Both final latent representation of z for notes and durations will be used as input to the dercorder. The input layers of decorder is connected to the two dense layers with activation function of sigmoid in the final dense layer in the decorder. The loss of vae consist of addition two component which are reconstruction loss and Kullback-Liebler divergence term (KL term). The reconstruction loss is binary cross entropy while KL term is defined as follow:
 
-$$  $$
+$$ Loss_{KL} = - \frac{1}{2}*(1 + \log{\sigma} - \mu^2 - \sigma^2 ) $$
+
+where $\mu$ and $\sigma$ is mean and standard deviation of latent distribution. The total loss is defined as 
+
+$$ Loss_{Total} = Loss_{Reconstruction} + Loss{KL}$$
 
 #### Music Generation - VAE
 The outputs (notes and durations) were go through top k sampling process where one from top 10 notes and one from top 5 durations will be randomly select. The dataframe was constructed based on the select notes and durations. Since there two clef, there are two total dataframe which are treble clef dataframe and bass clef dataframe. The dataframes will undergo the inverse label encoding and inverse transformation. The processed generated dataframes will be combine together into music score and stream forming a music.
