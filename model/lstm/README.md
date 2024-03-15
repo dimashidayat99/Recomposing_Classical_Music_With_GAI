@@ -3,7 +3,7 @@
 ## LSTM Framework
 
 <p align="middle">
-<img src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/eda/framework/eda_framework.png"/>
+<img src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/lstm/framework/LSTM_framework.png"/>
 </p>
 <p align="middle">
     <em>Exploratory LSTM Framework.</em>
