@@ -29,47 +29,101 @@ The dataset used in this project was obtained from [kaggle](https://www.kaggle.c
 
 ## EDA
 
-![](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/eda/framework/eda_framework.png)
+<p align="middle">
+<img src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/eda/framework/eda_framework.png"  width="300" />
+</p>
+<p align="middle">
+    <em>Exploratory Data Analysis Workflow.</em>
+</p>
 
 The process of Exploratory Data Analysis (EDA) is shown in figure above where it begins with gathering the classical music midi data. The data the was undergone sampling process where only chopin music will be choosen. There are two type of EDA, the first type of EDA is directly toward the exploration of the music itself without data preprocessing where the music sheet and audio was produced to get better understanding on the music on how music sounds like and how the musics notes and durations looks like.
 
-![](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/eda/music_sheet_audio/eda_sheet_music.png)
+<p align="middle">
+<img src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/eda/music_sheet_audio/eda_sheet_music.png"  width="800" />
+</p>
+<p align="middle">
+    <em>One of Chopin Composed Music, Music Sheet.</em>
+</p>
 
-![](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/eda/music_sheet_audio/eda_audio_music.png)
+
+<div align="center">
+
+<video src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/assets/69446089/e531ea2b-ec2f-4fc1-b451-e12e0e71d873" width=400 />
+</div>
+<p align="middle">
+    <em>One of Chopin Composed Music, Music Audio</em>
+</p>
 
 The process continue with the data preprocessing where each of the Chopin composed music was undergone clef spliiting where the treble and bass clef was separated. Each of the clef was undergone the music element extraction where the notes, chords and durations were extracted for the dataframe construction. There are two total dataframe was created which are treble dataframe and bass dataframe, each represent treble clef and bass clef respectively. Each dataframe consist of two features where the first features consisting the notes and chords while the second features consisting durations. The chords and notes were extracted based on their pitch freuency while the durations were extracted based on the durations type. Each of the dataframe were underwent the second type of EDA which is more toward data analytics. The EDA includes the univariate analysis, mutlivariate analysis and outliers analysis. 
 
 # Univariate Analysis
 ## Bass Clef
 ### Pitch Frequency Distribution
-![](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/eda/univariate_analysis/pitch_frequency_distribution_bass.png)
+
+<p align="middle">
+<img src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/eda/univariate_analysis/pitch_frequency_distribution_bass.png"  width="800" />
+</p>
+<p align="middle">
+    <em>Pitch Frequency Distribution for Bass Clef Data.</em>
+</p>
 
 The distribution of pitch frequency is positively skewed with the modes around 160 $s^-{1}$. Majority of the chords and notes used is in the frequencies of 50 $s^{-1}$ to 300 $s^{-1}$. While chords and notes with frequencies around 500 $s^{-1}$ and above can be seen as minority chords and notes used in the Chopin composed music. 
 
 ### Duration Distribution
-![](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/eda/univariate_analysis/durations_distribution_bass.png)
+
+<p align="middle">
+<img src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/eda/univariate_analysis/durations_distribution_bass.png"  width="800" />
+</p>
+<p align="middle">
+    <em>Duration Distribution for Bass Clef Data.</em>
+</p>
 
 Majority of the durations used was 8th notes with around 17500 counts followed by 16th note with around 14000 counts. The quarter notes is in the third position with around 7500 count. Other than the mentioned durations which are whole note, half note, complex note, breve note and 32nd note are the minority durations in the Chopin compoased music.
 
 ## Treble Clef
 ### Pitch Frequency Distribution
-![](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/eda/univariate_analysis/pitch_frequency_distribution_treble.png)
+
+<p align="middle">
+<img src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/eda/univariate_analysis/pitch_frequency_distribution_treble.png"  width="800" />
+</p>
+<p align="middle">
+    <em>Pitch Frequency Distribution for Treble Clef Data.</em>
+</p>
 
 The distribution of pitch frequency is positively skewed with the modes around 350 $s^-{1}$. Majority of the chords and notes used is in the frequencies of 200 $s^{-1}$ to 1300 $s^{-1}$. While chords and notes with frequencies around 1500 $s^{-1}$ and above can be seen as minority chords and notes used in the Chopin composed music.
 
 ### Duration Distribution
-![](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/eda/univariate_analysis/durations_distribution_treble.png)
+
+<p align="middle">
+<img src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/eda/univariate_analysis/durations_distribution_treble.png"  width="800" />
+</p>
+<p align="middle">
+    <em>Duration Distribution for Treble Clef Data.</em>
+</p>
 
 Majority of the durations used was 16th notes followed by 8th note. The quarter notes is in the third position with around 6500 counts. Other than the mentioned durations which are whole note, half note, complex note, breve note and 32nd note are the minority durations in the Chopin compoased music.
 
 # Multivariate Analysis
 ## Bass Clef
-![](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/eda/multivariate_analysis/durations_vs_pitch_frequency_bass.png)
+
+<p align="middle">
+<img src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/eda/multivariate_analysis/durations_vs_pitch_frequency_bass.png"  width="800" />
+</p>
+<p align="middle">
+    <em>Violnin Plot of Duration against Pitch Frequency for Bass Clef Data.</em>
+</p>
+
 
 The 8th note, 16th note and quarter note have almost similar shape of distribution which is almost symmetric. Majority of the notes are in the range of 30 $s^{-1}$ to 400 $s^{-1}$. The range of 8th note distribution is around 20 $s^{-1}$ to 1300 $s^{-1}$ while te range of 16th note distribution is around 20 $s^{-1}$ to 1400 $s^{-1}$. Half note has similar distribution of majority of the notes but postively skewed with the mode around 100 $s^{-1}$. The whole note has a mode around 80 $s^{-1}$ with majority of the notes is in the range of 20 $s^{-1}$ to 200 $s^{-1}$. The complex note has the range of distribution of 0 $s^{-1}$ to 1400 $s^{-1}$ with majority of the notes is in the range of 0 $s^{-1}$ to 400 $s^{-1}$. Both breve note and 32nd note has almost the same shape of distribution with almost same modes around 100 $s^{-1}$. Also, both have the same range of distribtion which from 0 $s^{-1}$ to around 360 $s^{-1}$.
 
 ## Treble Clef
-![](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/eda/multivariate_analysis/durations_vs_pitch_frequency_treble.png)
+
+<p align="middle">
+<img src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/eda/multivariate_analysis/durations_vs_pitch_frequency_treble.png"  width="800" />
+</p>
+<p align="middle">
+    <em>Violnin Plot of Duration against Pitch Frequency for Treble Clef Data.</em>
+</p>
 
 The half note, quarter note, 8th note and 16th note have almost similar shape of distribution which is slight positively skewed with almost similar range where most notes are in the range of 200 $s^{-1}$ to 1000 $s^{-1}$ with the distribution range of 200 $s^{-1}$ to 2900 $s^{-1}$. The whole note has a mode around 450 $s^{-1}$ with distribution range of 150 $s^{-1}$ to 1000 $s^{-1}$. The complex note has the longest range of distribution of 0 $s^{-1}$ to 3000 $s^{-1}$. The breve note distribution is the only negatively skewed in the treble clef dsitribution, the breve note distribution has mode around 500 $s^{-1}$ with the range of 200 $s^{-1}$ to 800 $s^{-1}$. The 32nd note distribution has mode around 500 $s^{-1}$ with the range of 0 $s^{-1}$ to 1750 $s^{-1}$ with the majority of the notes lies in the range of 200 $s^{-1}$ to 800 $s^{-1}$. 
 
@@ -82,26 +136,47 @@ There are so many generative models available which can be used in this project.
 
 ### Autoregressive Model - LSTM
 
-![](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/model/lstm/framework/LSTM_framework.png)
+<p align="middle">
+<img src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/model/lstm/framework/LSTM_framework.png" />
+</p>
+<p align="middle">
+    <em>LSTM Model Framework.</em>
+</p>
 
 LSTM is a type of neural network designed to handle sequence data by maintaining long-term dependencies. It does this by using a memory cell that can store information, along with gates that control the flow of information into and out of the cell. This allows LSTM networks to learn patterns in sequences and make predictions based on them, making them useful for main tasks in this project which is classical music recomposition. The detail explanation of LSTM framework as well as source code can be found in `model\lstm` [directory](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/tree/8a0cc61387d9b473845fe8fda830214b0ab490fa/model/lstm).
 
 ### AutoEncoder Model - VAE
 
-![](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/model/vae/framework/VAE_framework.png)
+<p align="middle">
+<img src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/model/vae/framework/VAE_framework.png" />
+</p>
+<p align="middle">
+    <em>VAE Model Framework.</em>
+</p>
+
 
 VAE is a type of neural network used for generative modeling. It learns to encode input data into a lower-dimensional latent space and then decode it back to the original input. VAEs are trained to maximize the likelihood of the observed data while also maximizing the mutual information between the latent variables and the data. This allows them to generate new data samples that resemble the training data, making them useful for main tasks in this project which is classical music recomposition.  The detail explanation of VAE framework as well as source code can be found in `model\vae` [directory](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/tree/8a0cc61387d9b473845fe8fda830214b0ab490fa/model/vae).
 
 ### Generative Adversarial Network - GAN
 
-![](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/model/gan/framework/GAN_framework.png)
+<p align="middle">
+<img src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/model/gan/framework/GAN_framework.png" />
+</p>
+<p align="middle">
+    <em>GAN Model Framework.</em>
+</p>
 
 
 GAN is a type of neural network used for generative modeling. It consists of two networks: a generator and a discriminator. The generator creates new data samples, while the discriminator tries to distinguish between real and generated samples. They are trained together in a adversarial manner, where the generator tries to fool the discriminator and the discriminator tries to become better at distinguishing real from fake. This competition leads to the generator learning to create increasingly realistic samples, making GANs useful for main tasks in this project which is classical music recomposition. The detail explanation of GAN framework as well as source code can be found in `model\gan` [directory](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/tree/8a0cc61387d9b473845fe8fda830214b0ab490fa/model/gan).
 
 ### Fusion Model - RNN-VAE-GAN
 
-![](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/model/fusion/framework/FUS_framework.png)
+<p align="middle">
+<img src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/model/fusion/framework/FUS_framework.png" />
+</p>
+<p align="middle">
+    <em>Fusion Model Framework.</em>
+</p>
 
 A fusion generative model that combines GRU, VAE and GAN elements would be a complex architecture aimed at capturing the strengths of each component. The GRU component will be used for sequence modeling. GRUs are a type of RNN that can capture long-range dependencies in sequences, making them suitable for tasks where the context of previous elements is important. While the VAE component would handle the latent space modeling. It would encode input data into a latent space representation, which can then be decoded back into the original data. VAEs are useful for learning meaningful representations of data and generating new samples that resemble the training data. Finally, the GAN component would add a competitive training mechanism to improve the realism of the generated samples. The generator part of the GAN would likely be integrated with the VAE decoder, generating samples from the learned latent space. The discriminator would then provide feedback to both the generator and the VAE on the realism of the generated samples.
 
@@ -109,7 +184,12 @@ In this fusion model, the GRU would help capture the sequential dependencies in 
 
 ### Large Language Model - GPT
 
-![](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/model/gpt/framework/GPT_framework.png)
+<p align="middle">
+<img src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/model/gpt/framework/GPT_framework.png" />
+</p>
+<p align="middle">
+    <em>GPT Model Framework.</em>
+</p>
 
 GPT is a type of deep learning model based on the transformer architecture. It is designed for natural language processing tasks such as text generation, translation, and question answering. However, since text generation is a sequence data and the music also is a sequence data. The GPT should be able to model music data, in a way that captures the structure and patterns of music. GPT is "pre-trained" on a large corpus of musical data, which allows it to learn the nuances of music elements and context. This pre-training is followed by fine-tuning on specific tasks to further improve performance. The detail explanation of GPT framework as well as source code can be found in `model\gpt` [directory](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/tree/8a0cc61387d9b473845fe8fda830214b0ab490fa/model/gpt).
 
@@ -119,43 +199,158 @@ There are three music generated for each models. The first music was generated b
 
 ## LSTM
 ### Key: C Major, Tempo: 90 Bpm
-![]()
+<div align="center">
+
+<video src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/assets/69446089/cdc40b47-6368-4b38-bd2b-00e24c1be49c" width=400 />
+</div>
+<p align="middle">
+    <em>Music Generated by LSTM (Key: C Major, Tempo: 90 Bpm)</em>
+</p>
+
+
 ### Key: A Minor, Tempo: 60 Bpm
-![]()
+<div align="center">
+
+<video src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/assets/69446089/109e6fa7-cc9b-40cf-9c01-592e70b09a2f" width=400 />
+</div>
+<p align="middle">
+    <em>Music Generated by LSTM (Key: A Minor, Tempo: 60 Bpm)</em>
+</p>
+
+
 ### Key: E Minor, Tempo: 120 Bpm
-![]()
+<div align="center">
+
+<video src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/assets/69446089/4aab4dd9-0dce-488b-8631-68bf5486cdb3" width=400 />
+</div>
+<p align="middle">
+    <em>Music Generated by LSTM (Key: E Minor, Tempo: 120 Bpm)</em>
+</p>
+
 
 ## VAE
 
 ### Key: C Major, Tempo: 90 Bpm
-![]()
+<div align="center">
+
+<video src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/assets/69446089/3dda8ed3-a5dd-435d-aef1-2acf5a00c88d" width=400 />
+</div>
+<p align="middle">
+    <em>Music Generated by VAE (Key: C Major, Tempo: 90 Bpm)</em>
+</p>
+
+
 ### Key: A Minor, Tempo: 60 Bpm
-![]()
+<div align="center">
+   
+<video src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/assets/69446089/39bded7e-b94f-4f3c-b8c1-55d201f109b5" width=400 />
+</div>
+<p align="middle">
+    <em>Music Generated by VAE (Key: A Minor, Tempo: 60 Bpm)</em>
+</p>
+
+
 ### Key: E Minor, Tempo: 120 Bpm
+<div align="center">
+
+<video src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/assets/69446089/708d608c-6c88-48f5-9a12-f3fe120a6481" width=400 />
+</div>
+<p align="middle">
+    <em>Music Generated by VAE (Key: E Minor, Tempo: 120 Bpm)</em>
+</p>
 
 ## GAN
 ### Key: C Major, Tempo: 90 Bpm
-![]()
+<div align="center">
+
+<video src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/assets/69446089/e0108611-4392-4ab3-a484-323af55c5cd5" width=400 />
+</div>
+<p align="middle">
+    <em>Music Generated by GAN (Key: C Major, Tempo: 90 Bpm)</em>
+</p>
+
+
+
 ### Key: A Minor, Tempo: 60 Bpm
-![]()
+<div align="center">
+
+<video src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/assets/69446089/f7de9ebf-cad7-4114-bdff-968252e60ba0" width=400 />
+</div>
+<p align="middle">
+    <em>Music Generated by GAN (Key: A Minor, Tempo: 60 Bpm)</em>
+</p>
+
+
 ### Key: E Minor, Tempo: 120 Bpm
-![]()
+<div align="center">
+
+<video src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/assets/69446089/06d8ce0c-65e2-4c90-94e3-9e5b00bb2b5d" width=400 />
+</div>
+<p align="middle">
+    <em>Music Generated by GAN (Key: E Minor, Tempo: 120 Bpm)</em>
+</p>
+
 
 ## RNN-VAE-GAN
 ### Key: C Major, Tempo: 90 Bpm
-![]()
+<div align="center">
+
+<video src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/assets/69446089/16b72497-460f-4a3a-8d93-0a078455912a" width=400 />
+</div>
+<p align="middle">
+    <em>Music Generated by RNN-VAE-GAN (Key: C Major, Tempo: 90 Bpm)</em>
+</p>
+
+
 ### Key: A Minor, Tempo: 60 Bpm
-![]()
+<div align="center">
+
+<video src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/assets/69446089/73a5fc07-bb83-4238-ac54-6a19d8de7148" width=400 />
+</div>
+<p align="middle">
+    <em>Music Generated by RNN-VAE-GAN (Key: A Minor, Tempo: 60 Bpm)</em>
+</p>
+
+
 ### Key: E Minor, Tempo: 120 Bpm
-![]()
+<div align="center">
+
+<video src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/assets/69446089/9cb70bf0-e8b5-4c4a-9738-bf034179391a" width=400 />
+</div>
+<p align="middle">
+    <em>Music Generated by RNN-VAE-GAN (Key: E Minor, Tempo: 120 Bpm)</em>
+</p>
 
 ## GPT
 ### Key: C Major, Tempo: 90 Bpm
-![]()
+<div align="center">
+
+<video src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/assets/69446089/a2243b94-56cc-450a-bc58-65afc8bafe13" width=400 />
+</div>
+<p align="middle">
+    <em>Music Generated by GPT (Key: C Major, Tempo: 90 Bpm)</em>
+</p>
+
+
 ### Key: A Minor, Tempo: 60 Bpm
-![]()
+<div align="center">
+
+<video src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/assets/69446089/ce2d57d5-715e-48c8-ab0e-fec132b66d42" width=400 />
+</div>
+<p align="middle">
+    <em>Music Generated by GPT (Key: A Minor, Tempo: 60 Bpm)</em>
+</p>
+
+
 ### Key: E Minor, Tempo: 120 Bpm
-![]()
+<div align="center">
+
+<video src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/assets/69446089/a068d86b-a159-432f-a7f3-29171c60f48b" width=400 />
+</div>
+<p align="middle">
+    <em>Music Generated by GPT (Key: E Minor, Tempo: 120 Bpm)</em>
+</p>
+
 
 
 # Conclusion
