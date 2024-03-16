@@ -34,14 +34,23 @@ The final product of the preprocessing stage is two data consist of 100 sequence
 This project used typically one model for each clef. Since there are two clef in total, therefore, there are total two identical model architecture were used for modelling stage.The architecture of GPT model start with the following architecture:
 
 1. Input Layer: This layer receives the input data, which is the sequence of processed music elements. It does not perform any computations but passes the input to the next layer.
+
 2. Embbeding Layers: The input layer was connected to embedding layers, the embedding layer which is a trainable vector embedding space is used to represent the discrete data as continous data in the form of vectors or embeddings and occupies a unique location in that space.
+
 3. Positional Encoding: Then, the positional encoding was added to the embedding vector to process the information of the data order.
+
 4. Transformer Block: Then, three transformer block was linearly connected with the previous layer. Each transformer block has similar architecture, where it contain multi head self attention connected linearly with dropout layer, layer normalization, feed forward network, another dropout layer and another layer normalization.
+
   * Multi Head Self Attention: The first component in the transformer block was multi head self attention which it allows the model to focus on different parts of the input sequence simultaneously by computing attention scores between different positions of the input. The outputs from different attention heads are concatenated and linearly transformed to retain information from different representation subspaces.
+
   * Dropout Layer: The second layer, the dropout is a regularization technique that helps prevent overfitting by randomly setting a fraction of input units to zero during training. This encourages the network to learn more robust features and reduces reliance on specific neurons.
+
   * Layer Normalization: Layer normalization normalizes the inputs of each layer to have a mean of zero and a standard deviation of one. This helps stabilize the training process and speeds up convergence.
+
   * Feed Foward Network: The feed foward network component consists of one or more fully connected layers with an activation function applied to the output of each layer. The feedforward network helps the model capture complex dependencies in the data.
+  
   * Dropout Layer: Another dropout layer was applied after the feedforward network to further regularize the model and prevent overfitting.
+  
   * Layer Normalization: Another layer normalization step aws applied after the second dropout layer to normalize the outputs of the feedforward network.
 
 5. Dense Layer: The last layer of the GPT model is a dense layer with the neuron size of vocab size of combine features which give the output.
@@ -50,11 +59,6 @@ The final product of the models will be the generated a combination of notes and
 
 ## Music Generation 
 The outputs of the models training are combination of notes and durations for both treble and bass clef data. Each of the outputs went through music generation processes to generate music. The processess is as follows:
-
-
- This output went through the top k sampling process where one from top ten of probability of combined feature was randomly select. The dataframe was constructed based on the selected value. Since there two clef, there are two total dataframe which are treble clef dataframe and bass clef dataframe. The dataframes underwent the inverse label encoding where the numerical representation of data will be transform to categorical data. The dataframe which contained only one feature which is the combine feature was splitted into two features for notes and durations. Each notes and durations were extracted from combined features to construct a new dataframe. The dataframe went through the inverse transformation to transform categorical representation of data to the initial data representation. The processed generated dataframes were submitted to the music stream, where the generated treble data was submitted to the treble clef stream while the generated bass data was submitted to the bass clef stream. Both streams went through the stream balancing process where the both streams length were adjusted to make sure both length are similar (or almost similar). The balanced streams were submitted to the music score. The music score was used to generate the music in the form of music audio and music sheet.
-
- 
 
 1. Top K Sampling: The outputs (combination of notes and durations) were underwent the top k sampling process where one from top ten of them were randomly select.
 
