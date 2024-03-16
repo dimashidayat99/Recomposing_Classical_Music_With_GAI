@@ -58,7 +58,7 @@ This project used typically one model for each clef. Therefore, there are total 
 The final product of the models will be the generated notes and durations in the form of probability across all notes used and durations used in the dataset.
 
 ## Music Generation
-The outputs of the model training are arrays of treble notes, treble durations, bass notes and bass durations. Each of the outputs went through music generation processes to generate music. The processess is as follows:
+The outputs of the models training are arrays of treble notes, treble durations, bass notes and bass durations. Each of the outputs went through music generation processes to generate music. The processess is as follows:
 
 1. Top K Sampling: The outputs (notes and durations) were underwent the top k sampling process where one from top ten notes and one from top five durations were randomly select.
 
