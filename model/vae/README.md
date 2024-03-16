@@ -72,8 +72,11 @@ The outputs of the model training are arrays of treble notes, treble durations, 
 
 4. Inverse Data Transformation: The dataframes went through the inverse data transformation where the categorical representation of data is transformed to original data representation.
 
-5. Stream Construction: The processed generated dataframes were submitted to the music stream, where the generated treble data was submitted to the treble clef stream while the generated bass data was submitted to the bass clef stream.
+5. Music Stream Construction: The processed generated dataframes were submitted to the music stream, where the generated treble data was submitted to the treble clef stream while the generated bass data was submitted to the bass clef stream.
 
 6. Stream Balancing: Both streams went through the stream balancing process where the both streams length were adjusted to make sure both length are similar (or almost similar).
 
 7. Music Score Construction: The balanced streams were submitted to the music score. The music score was used to genete the music in the form of music audio and music sheet.
+
+## Source code
+The source code of the music generation using VAE model can be found in `model\vae\source_code` [directory](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/tree/8e442b232784161b4b851ba214667b9fc2bc72de/model/vae/source_code). There two file there, the first file named as "[VAE_Music_Generation_with_Generative_AI](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/model/vae/source_code/VAE_Music_Generation_with_Generative_AI.ipynb)" is the code for modelling from the begininng. While the second file which named as "[VAE_Music_Production](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/model/vae/source_code/VAE_Music_Production.ipynb)", is the code for music production where different value of key and tempo were changed to develop a variability of music generated.
