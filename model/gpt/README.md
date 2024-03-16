@@ -41,17 +41,17 @@ This project used typically one model for each clef. Since there are two clef in
 
 4. Transformer Block: Then, three transformer block was linearly connected with the previous layer. Each transformer block has similar architecture, where it contain multi head self attention connected linearly with dropout layer, layer normalization, feed forward network, another dropout layer and another layer normalization.
 
-  * Multi Head Self Attention: The first component in the transformer block was multi head self attention which it allows the model to focus on different parts of the input sequence simultaneously by computing attention scores between different positions of the input. The outputs from different attention heads are concatenated and linearly transformed to retain information from different representation subspaces.
+    * Multi Head Self Attention: The first component in the transformer block was multi head self attention which it allows the model to focus on different parts of the input sequence simultaneously by computing attention scores between different positions of the input. The outputs from different attention heads are concatenated and linearly transformed to retain information from different representation subspaces.
 
-  * Dropout Layer: The second layer, the dropout is a regularization technique that helps prevent overfitting by randomly setting a fraction of input units to zero during training. This encourages the network to learn more robust features and reduces reliance on specific neurons.
+    * Dropout Layer: The second layer, the dropout is a regularization technique that helps prevent overfitting by randomly setting a fraction of input units to zero during training. This encourages the network to learn more robust features and reduces reliance on specific neurons.
 
-  * Layer Normalization: Layer normalization normalizes the inputs of each layer to have a mean of zero and a standard deviation of one. This helps stabilize the training process and speeds up convergence.
+    * Layer Normalization: Layer normalization normalizes the inputs of each layer to have a mean of zero and a standard deviation of one. This helps stabilize the training process and speeds up convergence.
 
-  * Feed Foward Network: The feed foward network component consists of one or more fully connected layers with an activation function applied to the output of each layer. The feedforward network helps the model capture complex dependencies in the data.
+    * Feed Foward Network: The feed foward network component consists of one or more fully connected layers with an activation function applied to the output of each layer. The feedforward network helps the model capture complex dependencies in the data.
   
-  * Dropout Layer: Another dropout layer was applied after the feedforward network to further regularize the model and prevent overfitting.
+    * Dropout Layer: Another dropout layer was applied after the feedforward network to further regularize the model and prevent overfitting.
   
-  * Layer Normalization: Another layer normalization step aws applied after the second dropout layer to normalize the outputs of the feedforward network.
+    * Layer Normalization: Another layer normalization step aws applied after the second dropout layer to normalize the outputs of the feedforward network.
 
 5. Dense Layer: The last layer of the GPT model is a dense layer with the neuron size of vocab size of combine features which give the output.
 
