@@ -33,7 +33,9 @@ As shown in the framework figure above, the processing od data for Fusion Model 
 The final products of the preprocessing stage were the 4 processed array which consist of one hot sequence data which are treble notes, treble durations, bass notes and bass durations.
 
 ## Modelling 
-The fusion model used the combination of RNN, VAE and GAN. Each of the architecture is implemented together forming a new model. The main architecture of RNN-VAE-GAN is a GAN model where it consist two main component which are generator and discriminator. In this model, the variant of GAN was used namely MDGAN which stand for Multiple Discrimninator Generative Adversial Network. As its name, there are more than one discriminator in this model. The generator component used the VAE architecture in its architecture and the RNN (GRU) architecture was used in the encoder part of VAE. The architecture of generator component in fusion models is as follows:
+
+### Generator Component
+The fusion model used the combination of RNN, VAE and GAN. Each of the architecture is implemented together forming a new model. The main architecture of RNN-VAE-GAN is a GAN model where it consist two main component which are generator and discriminator. The generator component used the VAE architecture in its architecture and the RNN (GRU) architecture was used in the encoder part of VAE. The architecture of generator component in fusion models is as follows:
 
 Encoder Note and Duration:
 
@@ -76,7 +78,7 @@ Decoder Note and Duration:
 
 Generator Component Setup: The encoder and the decoder are combined into the one model GRU-VAE (VAE with GRU architecure). The overall generators takes both the note and duration inputs and outputs reconstructed notes and durations, using decorder. This architecture allows the generator component to learn a joint latent representation for notes and durations, enabling the generation of sequences with coherent note and duration components. 
 
-Generator Loss: The loss of generator is similar with the VAE loss which consist of addition two component which are reconstruction loss and Kullback-Liebler divergence term (KL term). The reconstruction loss is binary cross entropy while KL term is defined as follow:
+Loss Function: The loss of generator is similar with the VAE loss which consist of addition two component which are reconstruction loss and Kullback-Liebler divergence term (KL term). The reconstruction loss is binary cross entropy while KL term is defined as follow:
 
 $$ Loss_{KL} = - \frac{1}{2}*(1 + \log{\sigma} - \mu^2 - \sigma^2 ) $$
 
@@ -87,4 +89,58 @@ $$ Loss_{Vae} = Loss_{Reconstruction} + Loss_{KL}$$
 Since there are two sets in total of latent varaibles for notes and durations features, the generator loss is defined as follows:
 
 $$ Loss_{Generator} =  Loss_{Vae Notes} + Loss_{Vae Durations}$$
+
+### Discriminators Component
+
+In this model, the variant of GAN was used namely MDGAN which stand for Multiple Discrimninator Generative Adversial Network. As its name, there are more than one discriminator in the MDGAN model. In this fusion model, there are two discriminator were utilized. One discriminator will discriminates the notes feature while the other discriminator will discriminates the durations feature. Each of 
+
+1. Input Layer (Dense): The first layer is a dense layer, It takes the input data and applies a linear transformation to map it to a higher-dimensional space.
+
+2. Batch Normalization: Batch normalization normalizes the activations of the previous layer, which can help with training by reducing internal covariate shift and improving gradient flow.
+
+3. Leaky ReLU Activation: The Leaky ReLU activation function introduces a small slope for negative inputs, helping to avoid "dying ReLU" units and allowing the network to learn even when the input is negative.
+
+4. Dropout Layer: Dropout which helps prevent overfitting by reducing co-adaptation of neurons.
+
+5.Dense layer: Another dense layer follows the first dropout layer. It further processes the data and extracts more complex features.
+
+6. Batch Normalization: Another batch normalization layer normalizes the activations of the previous layer, similar to the first batch normalization layer.
+
+7. Leaky ReLU Activation:Another Leaky ReLU activation function is applied after the second batch normalization layer to introduce non-linearity.
+
+8. Dropout Layer:Another dropout layer added after the second Leaky ReLU activation function to further prevent overfitting.
+
+9. Output Layer (Dense): The output layer is a dense layer with a single unit and a sigmoid activation function. It produces a binary output indicating the probability that the input data is real (1) or fake (0).
+
+10. Loss Function: The loss function used in the discriminator component is binary crossentropy.
+
+In the fusion model, the generator utilizing the GRU component will be used for sequence modeling. GRUs are a type of RNN that can capture long-range dependencies in sequences, making them suitable for tasks where the context of previous elements is important. While the VAE component would handle the latent space modeling. It would encode input data into a latent space representation, which can then be decoded back into the original data. VAEs are useful for learning meaningful representations of data and generating new samples that resemble the training data. With this architecture, the generator aims to produce realistic sequences of notes and durations, while the two discriminators are responsible for evaluating the realism of the generated notes and durations; they are trained to classify samples as either real (from the dataset) or fake (generated by the generator). During training, the generator aims to produce samples that are indistinguishable from real data to fool both discriminators, while both discriminators aim to become better at distinguishing between real and fake samples. This adversarial process drives the improvement of both the generator and the discriminators until the generator can generate high-quality, realistic samples that are difficult for both discriminators to differentiate from real data.
+
+## Music Generation
+The outputs of the models training are arrays of treble notes, treble durations, bass notes and bass durations. Each of the outputs went through music generation processes to generate music. The processess is as follows:
+
+1. Top K Sampling: The outputs (notes and durations) were underwent the top k sampling process where one from top ten notes and one from top five durations were randomly select.
+
+2. Dataframe Construction: The dataframe was constructed based on the select notes and durations. Since there two clef, there are two total dataframes which are treble clef dataframe and bass clef dataframe.
+
+3. Inverse Label Encoding: The dataframes underwent the inverse label encoding where the integer representation of data were converted to categorical representation of data.
+
+4. Inverse Data Transformation: The dataframes went through the inverse data transformation where the categorical representation of data is transformed to original data representation.
+
+5. Music Stream Construction: The processed generated dataframes were submitted to the music stream, where the generated treble data was submitted to the treble clef stream while the generated bass data was submitted to the bass clef stream.
+
+6. Stream Balancing: Both streams went through the stream balancing process where the both streams length were adjusted to make sure both length are similar (or almost similar).
+
+7. Music Score Construction: The balanced streams were submitted to the music score. The music score was used to genete the music in the form of music audio and music sheet.
+
+## Music Generated
+The generated music by VAE model can be found in `music_generated` [directory](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/tree/main/model/fusion/music_generated). The music sheet can be seen at `music_generated\sheet` [directory](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/tree/main/model/fusion/music_generated/sheet) and music audio can be found at `music_generated\audio` [directory](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/tree/main/model/fusion/music_generated/audio).
+
+## Source code
+The source code of the music generation using RNN-VAE-GAN model can be found in `model\fusion\source_code` [directory](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/tree/8e442b232784161b4b851ba214667b9fc2bc72de/model/fusion/source_code). There two file there, the first file named as "[RNN_VAE_GAN_Music_Generation_with_Generative_AI](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/model/fusion/source_code/RNN_VAE_GAN_Music_Generation_with_Generative_AI.ipynb)" is the code for modelling from the begininng. While the second file which named as "[RNN_VAE_GAN_Music_Production](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/model/fusion/source_code/RNN_VAE_GAN_Music_Production.ipynb)", is the code for music production where different value of key and tempo were changed to develop a variability of music generated.
+
+
+
+
+
 
