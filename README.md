@@ -1,3 +1,8 @@
+# Recomposing Classical Music with Generative AI
+
+![](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/assets/69446089/6072d90a-82d6-4aae-80af-deca88fab090)
+
+
 # Background of the Study
 
 Music is a universal language that transcends cultural boundaries and speaks to the depths of human emotion and experience. Classical music is one of the most enduring and beloved forms of music. Rooted in centuries of tradition and innovation, classical music encompasses a vast repertoire of compositions that have stood the test of time.  Classical music, with its rich history and diverse repertoire, has long been a source of inspiration and admiration for musicians and audiences alike. For its complexity, beauty, and emotional depth, the compositions of great classical composers such as Bach, Beethoven, Mozart, and others are revered.
