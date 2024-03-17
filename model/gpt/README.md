@@ -78,6 +78,9 @@ The outputs of the models training are combination of notes and durations for bo
 
 9. Music Score Construction: The balanced streams were submitted to the music score. The music score was used to genete the music in the form of music audio and music sheet.
 
+## Music Generated
+The generated music by VAE model can be found in `music_generated` [directory](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/tree/main/model/gpt/music_generated). The music sheet can be seen at `music_generated\sheet` [directory](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/tree/main/model/gpt/music_generated/sheet) and music audio can be found at `music_generated\audio` [directory](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/tree/main/model/gpt/music_generated/audio).
+
 ## Source code
 The source code of the music generation using GPT model can be found in `model\gpt\source_code` [directory](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/tree/8e442b232784161b4b851ba214667b9fc2bc72de/model/gpt/source_code). There two file there, the first file named as "[GPT_Music_Generation_with_Generative_AI](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/model/gpt/source_code/GPT_Music_Generation_with_Generative_AI.ipynb)" is the code for modelling from the begininng. While the second file which named as "[GPT_Music_Production](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/model/gpt/source_code/GPT_Music_Production.ipynb)", is the code for music production where different value of key and tempo were changed to develop a variability of music generated.
 
