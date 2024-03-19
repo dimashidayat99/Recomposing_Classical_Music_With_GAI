@@ -6,14 +6,14 @@
     <em>Exploratory Data Analysis Workflow.</em>
 </p>
 
-The process of Exploratory Data Analysis (EDA) is shown in figure above where it begins with gathering the classical music midi data. The data the was undergone sampling process where only chopin music will be choosen. There are two type of EDA, the first type of EDA is directly toward the exploration of the music itself without data preprocessing where the music sheet and audio was produced to get better understanding on the music on how music sounds like and how the musics notes and durations looks like.
+The process of Exploratory Data Analysis (EDA) is shown in the figure above where it begins with gathering the classical music midi data. The data underwent a sampling process where only Chopin's music will be chosen. There are two types of EDA, the first type of EDA is directly toward the exploration of the music itself without data preprocessing where the music sheet and audio are produced to get a better understanding of the music on how music sounds and how the music notes and durations looks like.
 
 # Music Composition
 <p align="middle">
 <img src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/blob/main/eda/music_sheet_audio/eda_sheet_music.png"  width="800" />
 </p>
 <p align="middle">
-    <em>One of Chopin Composed Music, Music Sheet.</em>
+    <em>Music Sheet of One of the Chopin Composed Music.</em>
 </p>
 
 
@@ -22,10 +22,10 @@ The process of Exploratory Data Analysis (EDA) is shown in figure above where it
 <video src="https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/assets/69446089/e531ea2b-ec2f-4fc1-b451-e12e0e71d873" width=400 />
 </div>
 <p align="middle">
-    <em>One of Chopin Composed Music, Music Audio</em>
+    <em>Music Audio of One of the Chopin Composed Music</em>
 </p>
 
-The process continue with the data preprocessing where each of the Chopin composed music was undergone clef spliiting where the treble and bass clef was separated. Each of the clef was undergone the music element extraction where the notes, chords and durations were extracted for the dataframe construction. There are two total dataframe was created which are treble dataframe and bass dataframe, each represent treble clef and bass clef respectively. Each dataframe consist of two features where the first features consisting the notes and chords while the second features consisting durations. The chords and notes were extracted based on their pitch freuency while the durations were extracted based on the durations type. Each of the dataframe were underwent the second type of EDA which is more toward data analytics. The EDA includes the univariate analysis, mutlivariate analysis and outliers analysis. 
+The process continued with the data preprocessing where each of the Chopin-composed music underwent clef splitting where the treble and bass clef were separated. Each of the clefs was undergone the music element extraction where the notes, chords, and durations were extracted for the data frame construction. There are two total data frames were created which are the treble data frame and bass data frame, each representing the treble clef and bass clef respectively. Each data frame consists of two features where the first feature is the notes and chords while the second feature is durations. The chords and notes were extracted based on their pitch frequency while the durations were extracted based on the durations type. Each of the data frames underwent the second type of EDA which is more toward data analytics. The EDA includes the univariate analysis, multivariate analysis and outliers analysis. 
 
 # Univariate Analysis
 ## Bass Clef
@@ -38,7 +38,7 @@ The process continue with the data preprocessing where each of the Chopin compos
     <em>Pitch Frequency Distribution for Bass Clef Data.</em>
 </p>
 
-The distribution of pitch frequency is positively skewed with the modes around 160 $s^-{1}$. Majority of the chords and notes used is in the frequencies of 50 $s^{-1}$ to 300 $s^{-1}$. While chords and notes with frequencies around 500 $s^{-1}$ and above can be seen as minority chords and notes used in the Chopin composed music. 
+The distribution of pitch frequency is positively skewed with the modes around 160 $s^-{1}$. Majority of the chords and notes used is in the frequencies of 50 $s^{-1}$ to 300 $s^{-1}$. While chords and notes with frequencies around 500 $s^{-1}$ and above can be seen as minority chords and notes used in the Chopin-composed music. 
 
 ### Duration Distribution
 
@@ -49,7 +49,7 @@ The distribution of pitch frequency is positively skewed with the modes around 1
     <em>Duration Distribution for Bass Clef Data.</em>
 </p>
 
-Majority of the durations used was 8th notes with around 17500 counts followed by 16th note with around 14000 counts. The quarter notes is in the third position with around 7500 count. Other than the mentioned durations which are whole note, half note, complex note, breve note and 32nd note are the minority durations in the Chopin compoased music.
+Majority of the durations used are 8th notes with around 17500 counts followed by 16th note with around 14000 counts. The quarter notes is in the third position with around 7500 count. Other than the mentioned durations which are whole note, half note, complex note, breve note and 32nd note are the minority durations in the Chopin-compoased music.
 
 ## Treble Clef
 ### Pitch Frequency Distribution
@@ -61,7 +61,7 @@ Majority of the durations used was 8th notes with around 17500 counts followed b
     <em>Pitch Frequency Distribution for Treble Clef Data.</em>
 </p>
 
-The distribution of pitch frequency is positively skewed with the modes around 350 $s^-{1}$. Majority of the chords and notes used is in the frequencies of 200 $s^{-1}$ to 1300 $s^{-1}$. While chords and notes with frequencies around 1500 $s^{-1}$ and above can be seen as minority chords and notes used in the Chopin composed music.
+The distribution of pitch frequency is positively skewed with the modes around 350 $s^-{1}$. Majority of the chords and notes used is in the frequencies of 200 $s^{-1}$ to 1300 $s^{-1}$. While chords and notes with frequencies around 1500 $s^{-1}$ and above can be seen as minority chords and notes used in the Chopin-composed music.
 
 ### Duration Distribution
 
@@ -72,7 +72,7 @@ The distribution of pitch frequency is positively skewed with the modes around 3
     <em>Duration Distribution for Treble Clef Data.</em>
 </p>
 
-Majority of the durations used was 16th notes followed by 8th note. The quarter notes is in the third position with around 6500 counts. Other than the mentioned durations which are whole note, half note, complex note, breve note and 32nd note are the minority durations in the Chopin compoased music.
+Majority of the duration used is 16th notes followed by 8th note. The quarter notes is in the third position with around 6500 counts. Other than the mentioned durations which are whole note, half note, complex note, breve note and 32nd note are the minority durations in the Chopin compoased music.
 
 ## Both Clef
 ### Pitch Frequency Distribution
@@ -83,7 +83,7 @@ Majority of the durations used was 16th notes followed by 8th note. The quarter 
     <em>Pitch Frequency Distribution for Both Clef Data.</em>
 </p>
 
-The distribution of pitch frequency is positively skewed with the modes around 250 $s^{-1}$. Majority of the chords and notes used is in the frequencies of 50 $s^{-1}$ to 750 $s^{-1}$. While chords and notes with frequencies around 1000 $s^{-1}$ and above can be seen as minority chords and notes in the Chopin composed music.
+The distribution of pitch frequency is positively skewed with the modes around 250 $s^{-1}$. Majority of the chords and notes used is in the frequencies of 50 $s^{-1}$ to 750 $s^{-1}$. While chords and notes with frequencies around 1000 $s^{-1}$ and above can be seen as minority chords and notes in the Chopin-composed music.
 
 ### Duration Distribution
 <p align="middle">
@@ -93,7 +93,7 @@ The distribution of pitch frequency is positively skewed with the modes around 2
     <em>Duration Distribution for Both Clef Data.</em>
 </p>
 
-Majority of the durations used was 8th notes with 35000 count followed by 16th note with around 32500 counts. The quarter notes is in the third position with 15000 counts. Other than the mentioned durations which are whole note, half note, complex note, breve note and 32nd note are the minority durations in the Chopin compoased music.
+Majority of the duration used is 8th notes with 35000 count followed by 16th note with around 32500 counts. The quarter notes is in the third position with 15000 counts. Other than the mentioned durations which are whole note, half note, complex note, breve note and 32nd note are the minority durations in the Chopin compoased music.
 
 # Multivariate Analysis
 ## Bass Clef
@@ -127,7 +127,7 @@ The half note, quarter note, 8th note and 16th note have almost similar shape of
     <em>Violnin Plot of Duration against Pitch Frequency for Both Clef Data.</em>
 </p>
 
-The 8th note and 16th note have almost similar shape of distribution which is positively skewed with similar range where most notes are in the range of 30 $s^{-1}$ to 2800 $s^{-1}$ and mode of 200 $s^{-1}$ with majority of the notes lies in the range of 100 $s^{-1}$ to 1000 $s^{-1}$. Half note has similar distribution range but the distribution is symmetric. The quarter note distribution has notable mode around 250 with the range of 0 $s^{-1}$ to 1200 $s^{-1}$ with majority of the notes lies in the range of 100 $s^{-1}$ to 500 $s^{-1}$. The whole note distribution is positively skewed with the mode around 150 $s^{-1}$ with distribution range of 0 $s^{-1}$ to 1100 $s^{-1}$ with the majority of notes lies in the range of 50 $s^{-1}$ to 500 $s^{-1}$. The complex note has the longest range of distribution of 0 $s^{-1}$ to 3000 $s^{-1}$. Both breve note and 32nd note, both are positively skewed but different shape and range. The range of distribtion of 32nd note is a bit longer compared to the range of distribtion of breve note while both have almost the same mode around 200 $s^{-1}$.
+The 8th note and 16th note have almost similar shape of distribution which is positively skewed with similar range where most notes are in the range of 30 $s^{-1}$ to 2800 $s^{-1}$ and mode of 200 $s^{-1}$ with majority of the notes lies in the range of 100 $s^{-1}$ to 1000 $s^{-1}$. Half note has similar distribution range but the distribution is symmetric. The quarter note distribution has notable mode around 250 with the range of 0 $s^{-1}$ to 1200 $s^{-1}$ with majority of the notes lies in the range of 100 $s^{-1}$ to 500 $s^{-1}$. The whole note distribution is positively skewed with the mode around 150 $s^{-1}$ with distribution range of 0 $s^{-1}$ to 1100 $s^{-1}$ with the majority of notes lies in the range of 50 $s^{-1}$ to 500 $s^{-1}$. The complex note has the longest range of distribution of 0 $s^{-1}$ to 3000 $s^{-1}$. Both breve note and 32nd note, both are positively skewed but different shape and range. The range of distribtion of 32nd note is a bit longer compared to the range of distribution of breve note while both have almost the same mode around 200 $s^{-1}$.
 
 # Outliers Analysis
 ## Bass Clef
@@ -160,5 +160,5 @@ From the plot, the median of the treble clef distribution is at 500 $s^{-1}$ wit
 
 From the plot, the median of the both clef distribution is at 300 $s^{-1}$ with the interquartile range of around 150 $s^{-1}$ to 500 $s^{-1}$. The both clef distribution has maximum of around 1000 $s^{-1}$ and minimum of around 50 $s^{-1}$. The notes above 1000 $s^{-1}$ are identfied as outliers.
 
-The outliers analsis shows there are many outliers in the data. However, the technique used to deal with outliers is simply keep the outliers in the data. Dealing with outliers by removing will affect the sequences of the notes which make the music have high degree of disorderness in the notes sequences which may cause worst output of AI-generate music.
+The outliers analysis shows there are many outliers in the data. However, the technique used to deal with outliers is simply to keep the outliers in the data. Dealing with outliers by removing them will affect the sequences of the notes which makes the music have a high degree of disorderness in the notes sequences which may cause the worst output of AI-generate music.
 
