@@ -58,21 +58,21 @@ This project used typically one model for each clef. Therefore, there are total 
 The final product of the models will be the generated notes and durations in the form of probability across all notes used and durations used in the dataset.
 
 ## Music Generation
-The outputs of the models training are arrays of treble notes, treble durations, bass notes and bass durations. Each of the outputs went through music generation processes to generate music. The processess is as follows:
+The outputs of the model training are arrays of treble notes, treble durations, bass notes, and bass durations. Each of the outputs went through music generation processes to generate music. The process is as follows:
 
-1. Top K Sampling: The outputs (notes and durations) were underwent the top k sampling process where one from top ten notes and one from top five durations were randomly select.
+1. Top K Sampling: The outputs (notes and durations) underwent the top k sampling process where one from the top ten notes and one from the top five durations were randomly selected.
 
-2. Dataframe Construction: The dataframe was constructed based on the select notes and durations. Since there two clef, there are two total dataframes which are treble clef dataframe and bass clef dataframe.
+2. Dataframe Construction: The dataframe was constructed based on the selected notes and durations. Since there are two clef, there are two total data frames which are the treble clef data frame and bass clef data frame.
 
-3. Inverse Label Encoding: The dataframes underwent the inverse label encoding where the integer representation of data were converted to categorical representation of data.
+3. Inverse Label Encoding: The data frames underwent inverse label encoding where the integer representation of data was converted to the categorical representation of data.
 
-4. Inverse Data Transformation: The dataframes went through the inverse data transformation where the categorical representation of data is transformed to original data representation.
+4. Inverse Data Transformation: The data frames went through the inverse data transformation where the categorical representation of data is transformed to the original data representation.
 
-5. Music Stream Construction: The processed generated dataframes were submitted to the music stream, where the generated treble data was submitted to the treble clef stream while the generated bass data was submitted to the bass clef stream.
+5. Music Stream Construction: The processed generated data frames were submitted to the music stream, where the generated treble data was submitted to the treble clef stream while the generated bass data was submitted to the bass clef stream.
 
-6. Stream Balancing: Both streams went through the stream balancing process where the both streams length were adjusted to make sure both length are similar (or almost similar).
+6. Stream Balancing: Both streams went through the stream balancing process where both stream's lengths were adjusted to make sure both lengths are similar (or almost similar).
 
-7. Music Score Construction: The balanced streams were submitted to the music score. The music score was used to genete the music in the form of music audio and music sheet.
+7. Music Score Construction: The balanced streams were submitted to the music score. The music score was used to generate the music in the form of music audio and music sheet.
 
 ## Music Generated
 The generated music by VAE model can be found in `music_generated` [directory](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/tree/main/model/lstm/music_generated). The music sheet can be seen at `music_generated\sheet` [directory](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/tree/main/model/lstm/music_generated/sheet) and music audio can be found at `music_generated\audio` [directory](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/tree/main/model/lstm/music_generated/audio).
