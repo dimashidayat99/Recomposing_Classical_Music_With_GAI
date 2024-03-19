@@ -28,7 +28,7 @@ As shown in the framework figure above, the processing of data for GAN modeling 
 
 9. One Hot Encoding: Each of the arrays went through one hot encoding process where the categorical representation of data was converted to a binary matrix format which produced three-dimensional arrays of treble array and bass array. 
 
-The final products of the preprocessing stage were the two processed arrays which consisted of one hot sequence data of the treble array and bass array. The arrays' shape is in a dimensional array where the dimension represents the sample size, sequence length, and feature number (one hot feature or vocabulary size of notes + durations). 
+The final products of the preprocessing stage were the two processed arrays which consisted of one hot sequence data of the treble array and bass array. The arrays' shape is in a dimensional array where the dimension represents the sample size, sequence length, and feature number (one hot feature or vocabulary size of note + duration). 
 
 ## Modelling 
 The architecture of the GAN model consists of two components which are generator and discriminator. The generator component begins with the following architectures:
@@ -75,9 +75,9 @@ This GAN architecture is designed to generate sequences of notes and durations f
 
 ## Music Generation
 ### Processing
-The outputs of the model training are arrays of treble notes, treble durations, bass notes, and bass durations. Each of the outputs went through music generation processes to generate music. The process is as follows:
+The notes and durations from each generated array of treble and bass are extracted forming note and duration arrays. Therefore, the outputs of the model training are arrays of treble notes, treble durations, bass notes, and bass durations. Each of the outputs went through music generation processes to generate music. The process is as follows:
 
-1. Top K Sampling: The outputs (notes and durations) underwent the top k sampling process where one from the top ten notes and one from the top five durations were randomly selected.
+1. Top K Sampling: The outputs underwent the top k sampling process where one from the top ten notes and one from the top five durations were randomly selected.
 
 2. Dataframe Construction: The dataframe was constructed based on the selected notes and durations. Since there are two clef, there are two total data frames which are the treble clef data frame and bass clef data frame.
 
