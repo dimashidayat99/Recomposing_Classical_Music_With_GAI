@@ -1,4 +1,4 @@
-# Recomposing Classical Music with Generative AI
+# Recomposing Classical Music Utilizing Generative AI
 
 ![](https://github.com/dimashidayat99/Recomposing_Classical_Music_With_GAI/assets/69446089/6072d90a-82d6-4aae-80af-deca88fab090)
 
